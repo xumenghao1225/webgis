@@ -13,22 +13,23 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@types/mapbox-gl": "^3.4.0",
-    "mapbox-gl": "^3.7.0",
-    "pinia": "^2.2.4",
-    "vue": "^3.5.12",
-    "vue-router": "^4.4.5",
     "@turf/bearing": "^7.0.0-alpha.0",
     "@turf/distance": "^7.0.0-alpha.0",
     "@turf/helpers": "^7.0.0-alpha.0",
     "@turf/line-arc": "^7.0.0-alpha.0",
     "@turf/meta": "^7.0.0-alpha.0",
+    "@turf/turf": "^7.1.0",
+    "@types/mapbox-gl": "^3.4.0",
     "city-selector-control": "^0.3.2",
     "echarts": "^5.4.2",
     "geojson-validation": "^1.0.2",
     "geotiff": "^2.0.7",
+    "mapbox-gl": "^3.7.0",
+    "pinia": "^2.2.4",
     "proj4": "^2.9.0",
-    "three": "^0.132.2"
+    "three": "^0.132.2",
+    "vue": "^3.5.12",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
@@ -42,6 +43,8 @@
     "eslint-plugin-vue": "^9.29.0",
     "npm-run-all2": "^6.2.3",
     "prettier": "^3.3.3",
+    "sass": "^1.79.5",
+    "scss": "^0.2.4",
     "ts-node": "^10.9.2",
     "typescript": "~5.5.4",
     "vite": "^5.4.8",
