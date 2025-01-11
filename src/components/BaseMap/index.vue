@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import mapboxgl from 'mapbox-gl'
-import type { Map, MapMouseEvent } from 'mapbox-gl'
+import type { Map, MapMouseEvent , MapboxEvent} from 'mapbox-gl'
 import { TK, STYLE } from '@/utils/constant'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 interface Props {
-  mapOptions?: Omit<MapOptions, 'container'>
+  mapOptions?: Omit<mapboxgl.MapOptions, 'container'>
   mapClickable?: boolean
 }
 const props = withDefaults(defineProps<Props>(), {
@@ -23,7 +23,7 @@ const mapContainer = Math.random().toString(16).substring(2)
 let map: Map
 
 onMounted(() => {
-  const mapDefaultOptions: MapOptions = {
+  const mapDefaultOptions: mapboxgl.MapOptions = {
     container: mapContainer,
     style: STYLE.DEFAULT,
     center: [113.335367, 23.13559],
@@ -41,11 +41,11 @@ onMounted(() => {
   initMap(options)
 })
 
-const initMap = (options: MapOptions) => {
+const initMap = (options: mapboxgl.MapOptions) => {
   mapboxgl.accessToken = TK
   map = new mapboxgl.Map(options)
 
-  map.on('style.load', (e: MapEvent) => {
+  map.on('style.load', (e: MapboxEvent) => {
     emit('loaded', e.target)
   })
   if (props.mapClickable) {

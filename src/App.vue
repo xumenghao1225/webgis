@@ -46,7 +46,7 @@ const handleSelect = (tab: tabType) => {
     >
     <el-main :class="AppStyle.main">
       <transition name="fade" mode="out-in">
-        <component :is="currentComponent"></component>
+        <component :key="pageStore.tabs" :is="currentComponent"></component>
       </transition>
     </el-main>
   </el-container>
