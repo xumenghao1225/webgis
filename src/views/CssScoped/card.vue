@@ -1,0 +1,17 @@
+<script setup lang="ts">
+import styleModule from './card.module.scss'
+</script>
+
+<template>
+  <el-card style="max-width: 480px">
+    <template #header>
+      <div class="card-header">
+        <span>Card name</span>
+      </div>
+    </template>
+    <p v-for="o in 4" :key="o" :class="[styleModule.item]">
+      {{ 'List item ' + o }}
+    </p>
+    <template #footer>Footer content</template>
+  </el-card>
+</template>
